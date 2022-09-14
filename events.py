@@ -1,6 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-
+from tower import tower_spawner
 
 def event_handler(pyg):
     for event in pygame.event.get():
@@ -9,4 +9,5 @@ def event_handler(pyg):
             sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = pygame.mouse.get_pos()
-            print( pos, [ pos[0]//pyg["SIZE"][0] ,  pos[1]//pyg["SIZE"][1] ] )
+            # print( pos, [ x, y ] )
+            tower_spawner(pyg, pos)

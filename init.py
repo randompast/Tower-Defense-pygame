@@ -26,4 +26,9 @@ def initialize():
     clear(pyg)
     pygame.display.set_caption('Tower Defense')
 
+    sw,sh = pyg['SCREENSIZE']
+    gw,gh = pyg['SIZE']
+    pyg['grid'] = [[0]*(sh//gh)]*(sw//gw)
+    pyg['towers'] = []
+
     return pyg

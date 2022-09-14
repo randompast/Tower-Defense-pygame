@@ -17,4 +17,6 @@ def gameloop(pyg):
         e.draw(pyg)
         e.update(pyg)
 
+        for i,tower in enumerate(pyg['towers']):
+            tower.draw(pyg)
         pyg['FramePerSec'].tick(pyg['FPS'])
