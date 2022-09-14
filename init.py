@@ -1,6 +1,9 @@
 import pygame, sys
 from pygame.locals import *
 
+def clear(pyg):
+    pyg['DISPLAYSURF'].fill(pyg['WHITE'])
+
 def initialize():
     # https://coderslegacy.com/python/python-pygame-tutorial/
 
@@ -11,11 +14,12 @@ def initialize():
     pyg = {'FPS' : 30
         ,'FramePerSec' : pygame.time.Clock()
         ,'WHITE' : (255, 255, 255)
+        ,'RED' : (255, 0, 0)
         ,'SCREENSIZE' : (500,500)
     }
 
     pyg['DISPLAYSURF'] = pygame.display.set_mode(pyg['SCREENSIZE'])
-    pyg['DISPLAYSURF'].fill(pyg['WHITE'])
+    clear(pyg)
     pygame.display.set_caption('Tower Defense')
 
     return pyg
