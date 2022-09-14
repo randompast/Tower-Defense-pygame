@@ -9,7 +9,7 @@ from grid import drawgrid
 def gameloop(pyg):
     # Beginning Game Loop
     enemyTimer = 0
-    while True:
+    while pyg['player'].health > 0:
         pygame.display.update()
         clear(pyg)
         drawgrid(pyg)

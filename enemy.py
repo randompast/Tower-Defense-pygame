@@ -6,6 +6,7 @@ class enemy():
         self.health = health
         self.pos = pos
         self.size = [50,50]
+        self.touchdown = False
 
     def draw(self, pyg):
         # left, top, width, height == self.pos + self.size
@@ -13,5 +14,7 @@ class enemy():
 
     def update(self, pyg):
         self.pos = [self.pos[0]+1, self.pos[1]]
-        if self.pos[0] > 500 :
-            del self
+        if self.pos[0] > pyg['SCREENSIZE'][0] :
+            self.touchdown = True
+            print('enemies are getting through!!!')
+            pyg['player'].health = pyg['player'].health - 1
