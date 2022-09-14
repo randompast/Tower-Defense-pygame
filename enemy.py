@@ -12,5 +12,6 @@ class enemy():
         pygame.draw.rect(pyg['DISPLAYSURF'], pyg['RED'], self.pos + pyg['SIZE'], 4)
 
     def update(self, pyg):
-        for i in enumerate(self.pos):
-            self.pos = [self.pos[0]+1, self.pos[1]]
+        self.pos = [self.pos[0]+1, self.pos[1]]
+        if self.pos[0] > 500 :
+            del self
