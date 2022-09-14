@@ -3,6 +3,7 @@ from pygame.locals import *
 from enemy import enemy
 from init import clear
 from events import event_handler
+from grid import drawgrid
 
 def gameloop(pyg):
     # Beginning Game Loop
@@ -12,6 +13,7 @@ def gameloop(pyg):
         event_handler(pyg)
 
         clear(pyg)
+        drawgrid(pyg)
         e.draw(pyg)
         e.update(pyg)
 
