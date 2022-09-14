@@ -30,5 +30,6 @@ def initialize():
     gw,gh = pyg['SIZE']
     pyg['grid'] = [ [0]*(sh//gh) for i in range(sw//gw) ]
     pyg['towers'] = []
+    pyg['enemies'] = []
 
     return pyg
