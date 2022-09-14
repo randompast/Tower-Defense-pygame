@@ -1,5 +1,6 @@
 import pygame, sys
 from pygame.locals import *
+from player import player
 
 def clear(pyg):
     pyg['DISPLAYSURF'].fill(pyg['WHITE'])
@@ -31,5 +32,5 @@ def initialize():
     pyg['grid'] = [ [0]*(sh//gh) for i in range(sw//gw) ]
     pyg['towers'] = []
     pyg['enemies'] = []
-
+    pyg['player'] = player(3,2,0)
     return pyg
