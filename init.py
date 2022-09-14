@@ -28,7 +28,7 @@ def initialize():
 
     sw,sh = pyg['SCREENSIZE']
     gw,gh = pyg['SIZE']
-    pyg['grid'] = [[0]*(sh//gh)]*(sw//gw)
+    pyg['grid'] = [ [0]*(sh//gh) for i in range(sw//gw) ]
     pyg['towers'] = []
 
     return pyg
