@@ -7,7 +7,7 @@ from grid import drawgrid
 
 def gameloop(pyg):
     # Beginning Game Loop
-    e = enemy(1, 2, [100,100])
+    e = enemy(1, 2, [0,200])
     while True:
         pygame.display.update()
         event_handler(pyg)

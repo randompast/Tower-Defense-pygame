@@ -12,4 +12,5 @@ class enemy():
         pygame.draw.rect(pyg['DISPLAYSURF'], pyg['RED'], self.pos + pyg['SIZE'], 4)
 
     def update(self, pyg):
-        self.pos = [ (v+3)%pyg['SCREENSIZE'][i] for i,v in enumerate(self.pos)]
+        for i in enumerate(self.pos):
+            self.pos = [self.pos[0]+1, self.pos[1]]
