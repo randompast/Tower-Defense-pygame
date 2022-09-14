@@ -13,6 +13,7 @@ def tower_spawner(pyg, pos):
             yeq = pyg['towers'][i].pos[1] == pos[1]
             if xeq and yeq:
                 del pyg['towers'][i]
+                pyg['grid'][x][y] = 0
                 return
 
 class tower():
