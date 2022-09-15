@@ -19,6 +19,10 @@ def tower_spawner(pyg, pos):
                     pyg['grid'][x][y] = 0
                     return
 
+def tower_updater(pyg):
+    for i, tower in enumerate(pyg['towers']):
+        tower.draw(pyg)
+
 class tower():
     def __init__(self, damage, health, pos):
         self.damage = damage
@@ -28,3 +32,7 @@ class tower():
     def draw(self, pyg):
         # left, top, width, height == self.pos + self.size
         pygame.draw.rect(pyg['DISPLAYSURF'], pyg['BLUE'], self.pos + pyg['SIZE'], 4)
+
+    def update(self, pyg):
+        # shoot at enemies? create projectiles?
+        pass

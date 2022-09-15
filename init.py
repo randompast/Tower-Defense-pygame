@@ -1,9 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from player import player
-white = (255, 255, 255)
-green = (0, 255, 0)
-blue = (0, 0, 128)
+
 def clear(pyg):
     pyg['DISPLAYSURF'].fill(pyg['WHITE'])
 
@@ -20,6 +18,7 @@ def initialize():
         ,'BLACK' : (0, 0, 0)
         ,'SCREENSIZE' : (500,500)
         ,'SIZE' : [50,50]
+        ,'enemyTimer' : 0
     }
 
     pyg['DISPLAYSURF'] = pygame.display.set_mode(pyg['SCREENSIZE'])
