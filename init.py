@@ -1,16 +1,15 @@
 import pygame, sys
 from pygame.locals import *
 from player import player
-
+white = (255, 255, 255)
+green = (0, 255, 0)
+blue = (0, 0, 128)
 def clear(pyg):
     pyg['DISPLAYSURF'].fill(pyg['WHITE'])
 
 def initialize():
-    # https://coderslegacy.com/python/python-pygame-tutorial/
-
     # Initialize program
     pygame.init()
-
     # Assign some basic values
     pyg = {'FPS' : 30
         ,'FramePerSec' : pygame.time.Clock()
