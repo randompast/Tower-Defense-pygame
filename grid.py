@@ -12,3 +12,13 @@ def drawgrid(pyg):
         spos = [ 0+gw, y*gh]
         epos = [sw-gw, y*gh]
         pygame.draw.line(pyg['DISPLAYSURF'], pyg['BLACK'], spos, epos)
+
+def drawgrid_direct(pyg):
+    gh, gw = len(pyg['grid']), len(pyg['grid'][0])
+    for r in range( gh ):
+        for c in range( gw ):
+            if pyg['grid'][r][c] != 0:
+                worldpos = [ (1 + c) * pyg['SIZE'][0]
+                            ,(1 + r) * pyg['SIZE'][1] ]
+                pygame.draw.rect(pyg['DISPLAYSURF'], pyg['BLUE'], worldpos + pyg['SIZE'], 4)
+    # pygame.draw.rect(pyg['DISPLAYSURF'], pyg['BLUE'], [300,100] + pyg['SIZE'], 4)

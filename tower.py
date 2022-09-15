@@ -19,6 +19,7 @@ def tower_spawner(pyg, pos):
                 if req and yeq:
                     del pyg['towers'][i]
                     pyg['grid'][r-1][c-1] = 0
+                    update_enemy_paths(pyg)
                     return
 
 def tower_updater(pyg):
