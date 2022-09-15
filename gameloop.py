@@ -22,8 +22,9 @@ def gameloop(pyg):
             pyg['enemies'].append(e)
         event_handler(pyg)
         for e in pyg['enemies']:
-            e.draw(pyg)
-            e.update(pyg)
+            if e.touchdown == False:
+                e.draw(pyg)
+                e.update(pyg)
         for i, tower in enumerate(pyg['towers']):
             tower.draw(pyg)
         pyg['FramePerSec'].tick(pyg['FPS'])

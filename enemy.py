@@ -13,7 +13,7 @@ class enemy():
         pygame.draw.rect(pyg['DISPLAYSURF'], pyg['RED'], self.pos + pyg['SIZE'], 4)
 
     def update(self, pyg):
-        self.pos = [self.pos[0]+1, self.pos[1]]
+        self.pos = [self.pos[0]+5, self.pos[1]]
         if self.pos[0] > pyg['SCREENSIZE'][0] :
             self.touchdown = True
             print('enemies are getting through!!!')
