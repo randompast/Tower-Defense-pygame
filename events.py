@@ -9,5 +9,4 @@ def event_handler(pyg):
             sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = pygame.mouse.get_pos()
-            # print( pos, [ x, y ] )
             tower_spawner(pyg, pos)

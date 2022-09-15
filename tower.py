@@ -7,16 +7,16 @@ def tower_spawner(pyg, pos):
     Mx, My = sw//gw,  sh//gh
     pos = [x*gw, y*gh]
     if 0 < y < My - 1 and 0 < x < Mx - 1:
-        if pyg['grid'][x][y] == 0:
+        if pyg['grid'][x-1][y-1] == 0:
             pyg['towers'] += [tower(1, 2, pos)]
-            pyg['grid'][x][y] = 1
+            pyg['grid'][x-1][y-1] = 1
         else:
             for i in range(len(pyg['towers'])):
                 xeq = pyg['towers'][i].pos[0] == pos[0]
                 yeq = pyg['towers'][i].pos[1] == pos[1]
                 if xeq and yeq:
                     del pyg['towers'][i]
-                    pyg['grid'][x][y] = 0
+                    pyg['grid'][x-1][y-1] = 0
                     return
 
 def tower_updater(pyg):

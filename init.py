@@ -27,7 +27,7 @@ def initialize():
 
     sw,sh = pyg['SCREENSIZE']
     gw,gh = pyg['SIZE']
-    pyg['grid'] = [ [0]*(sh//gh) for i in range(sw//gw) ]
+    pyg['grid'] = [ [0]*(sh//gh - 2) for i in range(sw//gw - 2) ]
     pyg['towers'] = []
     pyg['enemies'] = []
     pyg['player'] = player(3,2,0)
