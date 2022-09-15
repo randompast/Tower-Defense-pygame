@@ -43,7 +43,7 @@ class enemy():
         # pyg['astar'] = Astar( pyg['grid'] )
         # s = len( pyg['grid'] ) - 1
         # self.path = pyg['astar'].run(self.get_gridpos(),[0,7])
-        self.path = heapsolve(pyg['grid'], self.pos, [7,0])
+        self.path = heapsolve(pyg['grid'], self.get_gridpos(), [7,0])
         # print(self.path)
 
     def dist(self):
