@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 from player import player
+from enemy import update_enemy_paths
 
 def clear(pyg):
     pyg['DISPLAYSURF'].fill(pyg['WHITE'])
@@ -31,4 +32,5 @@ def initialize():
     pyg['towers'] = []
     pyg['enemies'] = []
     pyg['player'] = player(3,2,0)
+    update_enemy_paths(pyg)
     return pyg

@@ -1,0 +1,2 @@
+pygame==2.1.2
+astar-python==0.1.0
