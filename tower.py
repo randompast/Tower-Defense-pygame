@@ -10,7 +10,7 @@ def tower_spawner(pyg, pos):
     if 0 < c < Mc - 1 and 0 < r < Mr - 1:
         if pyg['grid'][r-1][c-1] == 0:
             pyg['towers'] += [tower(1, 2, pos)]
-            pyg['grid'][r-1][c-1] = None
+            pyg['grid'][r-1][c-1] = 1
             update_enemy_paths(pyg)
         else:
             for i in range(len(pyg['towers'])):

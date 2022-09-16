@@ -21,6 +21,7 @@ def initialize():
         ,'SIZE' : [50,50]
         ,'enemyTimer' : 0
         ,'paused' : False
+        ,'goal' : [6,0]
     }
 
     pyg['DISPLAYSURF'] = pygame.display.set_mode(pyg['SCREENSIZE'])
