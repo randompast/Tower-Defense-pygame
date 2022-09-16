@@ -37,7 +37,7 @@ def heapsolve(grid, spos, epos):
         D = distance( V[1], epos )
         visited.add(str(V[1]))
         all_moves(grid, visited, H, V[1], V[2][:], epos)
-    return V[2]
+    return V[2] if D == 0 else [spos]
 
 def simple_test():
     grid = [ [0]*8
