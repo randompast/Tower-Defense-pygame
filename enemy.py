@@ -67,7 +67,6 @@ class enemy():
         self.pos[0] += random.uniform(-1,1)*self.speed
         self.pos[1] += random.uniform(-1,1)*self.speed
 
-
     def distance(self, a, b):
         dx = a[0] - b[0]
         dy = a[1] - b[1]
@@ -77,13 +76,13 @@ class enemy():
         return self.distance(self.pos, self.path[0][::-1])
 
     def velocity(self):
-        if len( self.path ):
+        if len( self.path ) > 0:
             dx = self.path[0][1] - self.pos[0]
             dy = self.path[0][0] - self.pos[1]
             d = abs(dx) + abs(dy)
-            return [self.speed*dx/d, self.speed*dy/d]
-        else:
-            return [-10,-10]
+            if d > 0:
+                return [self.speed*dx/d, self.speed*dy/d]
+        return [-10,-10]
 
     def prune(self):
         if self.dist() < 1 and len(self.path) > 1:
@@ -93,8 +92,8 @@ class enemy():
 
     def draw_path(self, pyg):
         if self.path != None:
-            for p in self.path:
-                worldpos = [ (1 + p[1]) * pyg['SIZE'][1], (1 + p[0]) * pyg['SIZE'][0] ]
+            for y,x in self.path:
+                worldpos = [ (1 + x) * pyg['SIZE'][0], (1 + y) * pyg['SIZE'][1] ]
                 pygame.draw.rect(pyg['DISPLAYSURF'], pyg['GREEN'], worldpos + pyg['SIZE'], 4)
 
     def update(self, pyg):

@@ -13,7 +13,7 @@ def gameloop(pyg):
         pygame.display.update()
         clear(pyg)
         drawgrid(pyg)
-        drawgrid_direct(pyg)
+        # drawgrid_direct(pyg)
         draw_ui(pyg)
         event_handler(pyg)
         enemy_updater(pyg)

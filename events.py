@@ -10,9 +10,9 @@ def event_handler(pyg):
         if event.type == pygame.MOUSEBUTTONDOWN:
             pos = pygame.mouse.get_pos()
             tower_spawner(pyg, pos)
-            # print()
-            # for row in pyg['grid']:
-            #     print([i if i == 0 else 1 for i in row])
+            print()
+            for row in pyg['grid']:
+                print([i if i == 0 else 1 for i in row])
         if event.type == pygame.KEYDOWN:
             mods = pygame.key.get_mods()
             if event.unicode == 'p': # and mods % 2 == 0:

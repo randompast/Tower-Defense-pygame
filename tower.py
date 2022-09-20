@@ -6,7 +6,7 @@ def tower_spawner(pyg, pos):
     gw, gh = pyg['SIZE']
     c, r = pos[0]//gh, pos[1]//gw
     Mr, Mc = sw//gw,  sh//gh
-    pos = [c*gw, r*gh]
+    pos = [c, r]
     if 0 < c < Mc - 1 and 0 < r < Mr - 1:
         if pyg['grid'][r-1][c-1] == 0:
             pyg['towers'] += [tower(1, 2, pos)]
@@ -34,7 +34,8 @@ class tower():
 
     def draw(self, pyg):
         # left, top, width, height == self.pos + self.size
-        pygame.draw.rect(pyg['DISPLAYSURF'], pyg['BLUE'], self.pos + pyg['SIZE'], 4)
+        worldpos = [ (self.pos[0]) * pyg['SIZE'][0], (self.pos[1]) * pyg['SIZE'][1] ]
+        pygame.draw.rect(pyg['DISPLAYSURF'], pyg['BLUE'], worldpos + pyg['SIZE'], 4)
 
     def update(self, pyg):
         # shoot at enemies? create projectiles?
