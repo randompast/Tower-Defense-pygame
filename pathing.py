@@ -17,11 +17,13 @@ def perform_move(visited, H, G, mh, p, t, a, b):
 def all_moves(G, visited, H, p, path, target):
     gr, gc = len(G), len(G[0])
 
-    if p[0] < gc-1:
+    #rows
+    if p[0] < gr-1:
         perform_move(visited, H, G, path, p, target,  1,  0)
     if 0 < p[0]:
         perform_move(visited, H, G, path, p, target, -1,  0)
-    if p[1] < gr-1:
+    #cols
+    if p[1] < gc-1:
         perform_move(visited, H, G, path, p, target,  0,  1)
     if 0 < p[1]:
         perform_move(visited, H, G, path, p, target,  0, -1)
@@ -54,7 +56,7 @@ def simple_test():
         print([i if i == 0 else 1 for i in row])
 
     # for i in range(1000): #try timing
-    path = heapsolve(grid, [2,2], [6,0])
+    path = heapsolve(grid, [0,0], [6,0])
     print(path)
 
 if __name__ == '__main__':

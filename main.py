@@ -1,8 +1,8 @@
-from init import initialize
+from init import gamestate
 from gameloop import gameloop
 
 def main():
-    pyg = initialize()
+    pyg = gamestate()
     gameloop(pyg)
 
 if __name__ == '__main__':

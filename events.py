@@ -4,17 +4,19 @@ from tower import tower_spawner
 
 def event_handler(pyg):
     for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            pos = pygame.mouse.get_pos()
-            tower_spawner(pyg, pos)
-            print()
-            for row in pyg['grid']:
-                print([i if i == 0 else 1 for i in row])
         if event.type == pygame.KEYDOWN:
             mods = pygame.key.get_mods()
+            if event.key == 27:
+                pygame.quit()
+                sys.exit()
             if event.unicode == 'p': # and mods % 2 == 0:
-                print("PAUSING")
-                pyg['paused'] = not pyg['paused']
+                pyg.paused = not pyg.paused
+                print(f"Paused? {pyg.paused}")
+            if event.unicode == 'l': # and mods % 2 == 0:
+                for e in pyg.enemies:
+                    print(e.path)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
+            gpos = pyg.grid.mouse_to_grid(pos)
+            tower_spawner(pyg, gpos)
+            pyg.grid.print()
