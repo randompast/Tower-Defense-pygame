@@ -9,7 +9,7 @@ from enemy import enemy_updater
 def gameloop(pyg):
     while pyg.player.health > 0:
         pygame.display.update()
-        pyg.clear((255,255,255,25))
+        pyg.clear((255,255,255,40))
         pyg.grid.draw_grid_lines(pyg)
         pyg.grid.draw_grid(pyg)
         event_handler(pyg)
