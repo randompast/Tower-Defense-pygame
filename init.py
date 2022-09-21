@@ -21,9 +21,15 @@ class gamestate():
         pygame.display.set_caption('Tower Defense')
         self.grid = grid((8,8), (50,50), (10,20),(30,40))
         self.DISPLAYSURF = pygame.display.set_mode(self.grid.res)
+        self.DISPLAYSURF.set_alpha(10)
         self.towers = []
         self.enemies = []
         self.player = player(3,2,0)
 
-    def clear(self):
-        self.DISPLAYSURF.fill(self.WHITE)
+    def clear(self, color):
+        background = pygame.Surface(self.grid.res).convert_alpha()
+        pygame.draw.rect(background,color,[0,0]+self.grid.res)
+        # pygame.draw.rect(background,(255,255,255,100),(0,0,40,40))
+        # pygame.draw.rect(background,(255,0,255),(120,120,50,50))
+        # self.DISPLAYSURF.fill(color)
+        self.DISPLAYSURF.blit(background,(0,0))
