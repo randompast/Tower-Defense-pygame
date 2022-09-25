@@ -2,11 +2,13 @@ import pygame, sys
 from pygame.locals import *
 from player import player
 from grid import grid
+from frame_counter import frame_counter
 
 class gamestate():
     def __init__(self):
         self.FPS = 30
         self.FramePerSec = pygame.time.Clock()
+        self.fpscounter = frame_counter()
 
         self.WHITE = (255, 255, 255)
         self.RED = (255, 0, 0)

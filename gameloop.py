@@ -17,3 +17,4 @@ def gameloop(pyg):
         tower_updater(pyg)
         enemy_updater(pyg)
         pyg.FramePerSec.tick(pyg.FPS)
+        pyg.fpscounter.frame()

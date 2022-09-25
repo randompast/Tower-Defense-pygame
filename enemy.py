@@ -33,7 +33,7 @@ class enemy():
         self.size = [5,5]
         self.touchdown = False
         self.path = []
-        self.speed = 0.04
+        self.speed = 0.03
 
     def draw(self, pyg):
         pyg.grid.draw_circ(pyg, self.pos, [0.5,0.5], 0.5, (255,0,0))
@@ -95,7 +95,7 @@ class enemy():
             if len(self.path) > 0:
                 v = self.velocity()
                 if sum(v) > -20 and self.dist() > self.speed:
-                    self.pos[0] +=  v[0]
-                    self.pos[1] +=  v[1]
+                    self.pos[0] +=  v[0] #/ pyg.fpscounter.fps
+                    self.pos[1] +=  v[1] #/ pyg.fpscounter.fps
                 if len(self.path) > 1 and self.dist() <= self.speed:
                     self.path = self.path[1:]
