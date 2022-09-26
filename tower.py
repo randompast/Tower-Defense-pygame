@@ -26,8 +26,8 @@ class tower():
         for enemy_index, e in enumerate(pyg.enemies):
             print(self.pos)
             print(enemy_index)
-            if self.range > (self.pos[0] - pyg.enemies[enemy_index].pos[0]):
-                self.shoot(pyg, enemy_index)
+            if self.range > (self.pos[0] - pyg.enemies[enemy_index].pos[0]) and self.range+1 > (self.pos[1] - pyg.enemies[enemy_index].pos[1]):
+               self.shoot(pyg, enemy_index)
 
 
 def tower_spawner(pyg, gpos):
